@@ -26,8 +26,8 @@ titles = popular_area.findAll(attrs={'class':'media__title'})
 images = popular_area.findAll(attrs={'class':'media__image'})
 # print(titles) # hasilnya yang ada di class tsb
 
-for title in titles:
-    print(title.text) #.text tanpa lambang2
+#for title in titles:
+#    print(title.text) #.text tanpa lambang2
 
-for image in image:
+for image in images:
     print(image.find('a').find('img')['title'])

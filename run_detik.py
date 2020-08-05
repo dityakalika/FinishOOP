@@ -8,7 +8,7 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/detikterpopuler')
+@app.route('/detik-terpopuler')
 def detik_terpopuler():
     html = 'https://www.detik.com/terpopuler'
     website = requests.get(html, params={'tag_from': 'wb_cb_mostPopular_more'})
@@ -16,6 +16,7 @@ def detik_terpopuler():
     popular_area = soup.find(attrs={'class': 'grid-row list-content'})
     titles = popular_area.findAll(attrs={'class': 'media__title'})
     images = popular_area.findAll(attrs={'class': 'media__image'})
+
     return render_template('index.html', images = images)
 
 if __name__ == '__main__':
