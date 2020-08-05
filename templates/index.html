@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> HALAMAN UTAMA </title>
+    </head>
+    <body>
+        <div>
+            <h1> KUMPULAN HASIL SCRAPING </h1>
+            <p>Silahkan klik link terkait untuk melihat informasi lebih lanjut</p>
+        </div>
+        <div class="container-fluid">
+            {% for image in images %}
+                {{ image|safe }}
+            {% endfor%}
+        </div>
+    </body>
+</html>

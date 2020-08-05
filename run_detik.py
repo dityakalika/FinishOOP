@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from flask import Flask, render_template
 
+#PEMBUKA
 app = Flask(__name__)
 
 @app.route('/')
@@ -16,8 +17,8 @@ def detik_terpopuler():
     popular_area = soup.find(attrs={'class': 'grid-row list-content'})
     titles = popular_area.findAll(attrs={'class': 'media__title'})
     images = popular_area.findAll(attrs={'class': 'media__image'})
-
     return render_template('index.html', images = images)
 
+#PENUTUP
 if __name__ == '__main__':
     app.run(debug=True)
